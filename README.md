@@ -5,3 +5,5 @@
 / python database/db_setup.py  
 / drop all  
 / python database/drop.py  
+/ run  
+/ python main_cli

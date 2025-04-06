@@ -95,7 +95,7 @@ def create_product_management_gui():
             elif action == "cancel_order":
                 OrderManage.CANCEL_ORDER(order_id)
             elif action == "change_status":
-                new_status = simpledialog.askstring("Input", "Enter new status (pending, finished):")
+                new_status = simpledialog.askstring("Input", "Enter new status ('pending', 'paid', 'shipped', 'completed'):")
                 OrderManage.CHANGE_ORDER_STATUS(order_id, new_status)
 
     # 产品相关按钮

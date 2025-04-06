@@ -54,7 +54,7 @@ class OrderManage:
                     price_result = cursor.fetchone()
                     if price_result:
                         price = price_result['price']
-                        cursor.execute("INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (%s, %s, %s, %s)",
+                        cursor.execute("INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES (%s, %s, %s, %s)",
                                        (order_id, product_id, quantity, price))
                 conn.commit()
                 messagebox.showinfo("Success", "Order created successfully.")
@@ -108,6 +108,7 @@ class OrderManage:
         conn = get_db_connection()
         try:
             with conn.cursor() as cursor:
+                print(f"UPDATE orders SET status = {new_status} WHERE order_id = {order_id}")
                 cursor.execute("UPDATE orders SET status = %s WHERE order_id = %s", (new_status, order_id))
                 conn.commit()
                 messagebox.showinfo("Success", "Order status changed successfully.")

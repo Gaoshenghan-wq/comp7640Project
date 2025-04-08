@@ -6,4 +6,4 @@
 / drop all  
 / python database/drop.py  
 / run  
-/ python main_cli
+/ python main_front.py
